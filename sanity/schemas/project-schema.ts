@@ -33,6 +33,11 @@ const project = {
             type: 'url'
         },
         {
+            name: 'video',
+            title: 'Video',
+            type: 'file'
+        },
+        {
             name: 'content',
             title: 'Content',
             type: 'array',
