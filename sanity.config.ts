@@ -6,7 +6,7 @@ import { vercelDeployTool } from 'sanity-plugin-vercel-deploy';
 const config = defineConfig({
     projectId: "rxcpny8a",
     dataset: "production",
-    title: "My Personal Website",
+    title: "UX Sanity + Next Test",
     apiVersion: "2024-04-18",
     basePath: "/admin",
     plugins: [structureTool(), vercelDeployTool()],
