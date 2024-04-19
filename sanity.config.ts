@@ -6,11 +6,12 @@ import { vercelDeployTool } from 'sanity-plugin-vercel-deploy';
 const config = defineConfig({
     projectId: "rxcpny8a",
     dataset: "production",
-    title: "Test Website",
-    apiVersion: "2023-03-19",
+    title: "My Personal Website",
+    apiVersion: "2024-04-18",
     basePath: "/admin",
     plugins: [structureTool(), vercelDeployTool()],
     schema: { types: schemas }
-})
+  })
 
 export default config;
+
