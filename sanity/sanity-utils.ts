@@ -15,7 +15,11 @@ export async function getProjects(): Promise<Project[]> {
             "image": image.asset->url,
             url,
             content
-        }`
+        }`,{},
+        {
+          // You can set any of the `cache` and `next` options as you would on a standard `fetch` call
+          cache: 'no-cache',
+        },
     )
 }
 
@@ -30,7 +34,10 @@ export async function getProject(slug: string): Promise<Project> {
             url,
             content
         }`,
-        { slug }
+        { slug },{
+            // You can set any of the `cache` and `next` options as you would on a standard `fetch` call
+            cache: 'no-cache',
+          },
     )
 }
 
@@ -41,7 +48,10 @@ export async function getPages(): Promise<Page[]> {
             _createdAt,
             title,
             "slug": slug.current
-        }`
+        }`,{},{
+            // You can set any of the `cache` and `next` options as you would on a standard `fetch` call
+            cache: 'no-cache',
+          },
         
     )
 }
@@ -54,7 +64,10 @@ export async function getPage(slug: string): Promise<Page> {
             "slug": slug.current,
             content
         }`,
-        { slug }
+        { slug },{
+            // You can set any of the `cache` and `next` options as you would on a standard `fetch` call
+            cache: 'no-cache',
+          },
     )
 }
 
