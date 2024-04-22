@@ -16,7 +16,7 @@ export default async function Home() {
       <div className="p-10 max-w-6xl">
 
         <h1 className="text-7xl font-extrabold">
-        WE BUILD <span className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent">3 BRANDS</span> THAT CONNECT YOUR IDEAS TO THE WORLD
+        WE BUILD <span className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent">4 BRANDS</span> THAT CONNECT YOUR IDEAS TO THE WORLD
         
         </h1>
         <p className="mt-3 text-xl text-gray-600">We’re a brand and digital studio who partner with people who find truly better ways of doing things.</p>
