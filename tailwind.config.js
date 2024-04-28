@@ -9,7 +9,61 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        "loop-scroll": "loop-scroll 10s linear infinite",
+      },
+      keyframes: {
+        "loop-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+      boxShadow: {
+        'nav': '0 -2px 4px 0px rgba(0,0,0,0.1)',
+      },
+      borderRadius: {
+        '2.5xl': '20px',
+      },
+      backgroundColor: {
+        'white-rock': 'rgba(236, 231, 222, 1)',
+        'ultramarine': 'rgba(49, 107, 246, 1)',
+        'spring-green': 'rgba(66, 221, 114, 1)',
+        'envoy-dark-green': 'rgba(27, 43, 36, 1)',
+      },
+      fontSize: {
+        'xxs': '0.5rem',
+        '2.5xl': '1.656rem', // 26.5px
+        '3.5xl': '2rem', // 32px
+        '4.5xl': '2.625rem', // 42px
+      },
+      lineHeight: {
+        '4.5': '1.125rem', //18px
+        '9.5': '2.313rem', // 37px
+        '11': '3.125rem', // 50px
+      },
+      colors: {
+        'charcoal': 'rgba(35, 36, 31, 1)',
+      },
+      fontFamily: {
+        'telegraf': ['PP Telegraf'],
+        'gt-pressura': ['GT Pressura Mono'],
+        'roboto': ['Roboto'],
+      },
+      height: {
+        'showcase-thumb': '12.375rem', // 198px
+        'mobile-video': '36.43rem', // 583px
+      },
+      gap: {
+        '1.5': '5px',
+        '2.9': '1.063rem' // 17px
+      }
+    },
   },
   plugins: [],
 }

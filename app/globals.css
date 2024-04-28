@@ -1,3 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,800&display=swap');
+
+
+@font-face {
+    font-family: 'PP Telegraf';
+    src: url('/public/fonts/pptelegraf-regular.woff2') format ('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PP Telegraf';
+    src: url('/public/fonts/pptelegraf-ultralight.woff2') format ('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PP Telegraf';
+    src: url('/public/fonts/pptelegraf-ultrabold.woff2') format ('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'GT Pressura Mono';
+    src: url('/public/fonts/gt_pressura_mono_regular.woff2') format ('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'PP Telegraf', 'GT Pressura Mono', 'Roboto';
+}
+
+p {
+  margin-bottom: 25px!important;
+}
+
+.bar {
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: black;
+}
+
+.client-icon {
+    width: 112px;
+    height: 112px;
+    border-radius: 10px;
+}
+
+.client-icon:active {
+    transform: scale(0.90);
+}
+
+.colour {
+    cursor: pointer;
+    opacity: 0;
+    top: 0px;
+    transition: 0.08s ease-in-out;
+}
+
+.colour:hover {
+    opacity: 1;
+}
+
+/* Mobile hero video expand */
+.hero-video {
+  animation: expand linear both;
+  animation-timeline: view();
+  animation-range-start: 35%;
+  animation-range-end: 40%;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .hero {
+        height: 75vh;
+    }
+    .overlay-bg {
+        background-color: #ece7dec4;
+    }
+}
+
+@keyframes scrollRight {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-200vw);
+    }
+  }
+  
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(-100vw);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  .scrolling-right, .scrolling-left {
+    width: 100vw;
+  }
+  
+  .scrolling-right {
+    display: flex;
+    animation: scrollRight 20s linear infinite;
+  }
+  
+  .scrolling-left {
+    display: flex;
+    animation: scrollLeft 20s linear infinite;
+  }
+
+@keyframes expand {
+  from {
+   transform: scale(0.9)
+  }
+  to {
+    transform: scale(1);
+  }
+}

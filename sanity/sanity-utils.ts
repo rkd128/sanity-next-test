@@ -2,17 +2,26 @@ import { Project } from "@/types/Project";
 import { createClient, groq } from "next-sanity";
 import clientConfig from "./config/client-config";
 import { Page } from "@/types/Page";
+import { Service } from "@/types/Service"
 
 const client = createClient(clientConfig);
 
 export async function getProjects(): Promise<Project[]> {
    return client.fetch(
-        groq`*[_type == "project"]{
+        groq`*[_type == "projects"]{
             _id,
             _createdAt,
             name,
+            featured,
+            award,
+            "thumbnail": thumbnail.asset->url,
+            category,
+            "thumbnailVideo": thumbnail.type,
+            "clientCard": clientCard.asset->url,
+            "clientCardColour": clientCardColour.asset->url,
+            "howWeHelpedText": howWeHelped.howWeHelpedText,
+            "services": howWeHelped.services,
             "slug": slug.current,
-            "image": image.asset->url,
             url,
             content
         }`,{},
@@ -25,14 +34,26 @@ export async function getProjects(): Promise<Project[]> {
 
 export async function getProject(slug: string): Promise<Project> {
     return client.fetch(
-        groq`*[_type == "project" && slug.current == $slug][0]{
+        groq`*[_type == "projects" && slug.current == $slug][0]{
             _id,
             _createdAt,
             name,
+            featured,
+            award,
+            "thumbnail": thumbnail.asset->url,
+            "thumbnailVideo": thumbnail.type,
+            "clientCard": clientCard.asset->url,
+            "clientCardColour": clientCardColour.asset->url,
+            "heroHeader": heroText.heroHeader,
+            "howWeHelpedText": howWeHelped.howWeHelpedText,
+            "services": howWeHelped.services,
+            "heroSnippet": heroText.heroSnippet,
             "slug": slug.current,
-            "image": image.asset->url,
-            url,
-            content
+            "mediaFiles": mediaFiles[]{
+                "url": asset->url,
+                "isVideo": type
+            },
+            url
         }`,
         { slug },{
             // You can set any of the `cache` and `next` options as you would on a standard `fetch` call
@@ -71,3 +92,39 @@ export async function getPage(slug: string): Promise<Page> {
     )
 }
 
+export async function getServices(): Promise<Service[]> {
+    return client.fetch(
+        groq`*[_type == "service"]{
+            _id,
+            _createdAt,
+            title,
+            name,
+            "media": media.asset->url,
+            "video": media.type,
+            "overlay": media.textOverlay,
+            "slug": slug.current
+        }`,{},{
+            // You can set any of the `cache` and `next` options as you would on a standard `fetch` call
+            cache: 'no-cache',
+          },
+        
+    )
+}
+export async function getService(slug: string): Promise<Service> {
+    return client.fetch(
+        groq`*[_type == "service" && slug.current == $slug][0]{
+            _id,
+            _createdAt,
+            title,
+            name,
+            "media": media.asset->url,
+            "video": media.type,
+            "overlay": media.textOverlay,
+            content
+        }`,
+        { slug },{
+            // You can set any of the `cache` and `next` options as you would on a standard `fetch` call
+            cache: 'no-cache',
+          },
+    )
+}

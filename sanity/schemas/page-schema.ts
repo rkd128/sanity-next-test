@@ -2,6 +2,9 @@ const page = {
     name: "page",
     title: "Pages",
     type: 'document',
+    groups: [
+      {name: 'seo', title: 'SEO'}
+    ],
     fields: [
       {
         name: 'title',
@@ -20,7 +23,13 @@ const page = {
         type: 'array',
         of: [{ type: 'block' }],
       },
+      {
+        name: 'seo',
+        title: 'SEO',
+        type: 'seo',
+        group: 'seo'
+    },
     ],
   };
   
-  export default page;
+export default page;
