@@ -54,6 +54,7 @@ module.exports = {
         'telegraf': ['PP Telegraf'],
         'gt-pressura': ['GT Pressura Mono'],
         'roboto': ['Roboto'],
+        'larken': ['larken'],
       },
       height: {
         'showcase-thumb': '12.375rem', // 198px

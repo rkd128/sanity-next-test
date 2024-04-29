@@ -158,7 +158,7 @@ export default async function Home() {
                   :
                   <img src={service.media} alt={service.name} className="object-cover rounded-2.5xl" />
                 }
-                <p className="absolute top-0 w-full h-full text-2.5xl text-charcoal font-serif text-center font-bold leading-8 pl-11 pr-8 pt-20 pb-16">{service.overlay}</p>
+                <p className="absolute top-0 flex items-center w-full h-full text-2.5xl text-charcoal font-larken text-center font-bold leading-7 px-14">{service.overlay}</p>
               </div>
               <span key={index} className="font-gt-pressura text-xl">{service.name}</span>
 
