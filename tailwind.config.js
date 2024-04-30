@@ -35,6 +35,7 @@ module.exports = {
         'ultramarine': 'rgba(49, 107, 246, 1)',
         'spring-green': 'rgba(66, 221, 114, 1)',
         'envoy-dark-green': 'rgba(27, 43, 36, 1)',
+        'ux-blue': 'rgba(49, 107, 246, 1)',
       },
       fontSize: {
         'xxs': '0.5rem',
@@ -49,6 +50,8 @@ module.exports = {
       },
       colors: {
         'charcoal': 'rgba(35, 36, 31, 1)',
+        'ux-offwhite': 'rgba(255, 254, 247, 1)',
+
       },
       fontFamily: {
         'telegraf': ['PP Telegraf'],
@@ -62,7 +65,11 @@ module.exports = {
       },
       gap: {
         '1.5': '5px',
+        '15': '3.75rem',
         '2.9': '1.063rem' // 17px
+      },
+      padding: {
+        '20.5': '87px' // 87px
       }
     },
   },

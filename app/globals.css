@@ -85,6 +85,9 @@ p {
     .overlay-bg {
         background-color: #ece7dec4;
     }
+    .footer-link {
+      @apply text-ux-offwhite font-gt-pressura text-base border border-transparent hover:border-white leading-5 rounded-md px-2 py-1;
+    }
 }
 
 @keyframes scrollRight {

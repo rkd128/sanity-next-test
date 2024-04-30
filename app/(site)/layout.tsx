@@ -43,6 +43,47 @@ export default async function RootLayout({
           </div> */}
 
         <main className="flex flex-col items-center w-screen">{children}</main>
+
+      {/* FOOTER */}
+        <footer className='bg-ux-blue w-screen py-16 md:px-20 pb-64'>
+          <div className='grid grid-cols-2 max-md:flex max-md:flex-col max-md:items-center max-md:gap-8'>
+            <Image src="/logo-white.svg" alt='Underexposed Logo in white' width={582} height={383} className='w-3/4 max-lg:w-1/2' />
+            <div className='flex flex-col items-end gap-10 lg:gap-40'>
+              {/* MAP CONTAINER */}
+              <div className='grid grid-cols-3 gap-10 lg:gap-16 pt-10 lg:pr-20.5 w-max max-md:flex max-md:justify-center'>
+                {/* SITE MAP */}
+                <div className='col-start-2 col-end-2 flex flex-col gap-3 '>
+                  <Link href="/" className='footer-link'>ABOUT US</Link>
+                  <Link href="/" className='footer-link'>SHOWCASE</Link>
+                  <Link href="/" className='footer-link'>SKETCHBOOK</Link>
+                  <Link href="/" className='footer-link'>IT&apos;S ALL ABOUT U</Link>
+                  <Link href="/" className='footer-link'>CAREERS</Link>
+                </div>
+                {/* SOCIAL LINKS */}
+                <div className='col-start-3 col-end-3 flex flex-col gap-3'>
+                  <Link href="/" className='footer-link flex flex-row gap-4 items-center'>
+                    <Image src="/instagram.svg" alt='Instagram icon' width={24} height={24}/>
+                    INSTAGRAM
+                  </Link>
+                  <Link href="/" className='footer-link flex flex-row gap-4 items-center'>
+                    <Image src="/linkedin.svg" alt='LinkedIn icon' width={24} height={24}/>
+                    LINKEDIN
+                  </Link>
+                  <Link href="/" className='footer-link flex flex-row gap-4 items-center'>
+                    <Image src="/behance.svg" alt='Behance icon' width={24} height={24}/>
+                    BEHANCE
+                  </Link>
+                </div>
+              </div>
+              {/* BORING LINKS */}
+              <div className='flex gap-3 lg:gap-16'>
+                <Link href="/" className='footer-link w-max text-xs'>TERMS OF USE</Link>
+                <Link href="/" className='footer-link w-max text-xs'>PRIVACY POLICY</Link>
+                <Link href="/" className='footer-link w-max text-xs'>COOKIE POLICY</Link>
+              </div>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   )

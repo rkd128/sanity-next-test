@@ -7,8 +7,8 @@ const project = {
     type: 'document',
     groups: [
         {
-            name: 'media',
-            title: 'Media'
+            name: 'page',
+            title: 'Page Content'
         },
         {
             name: 'seo',
@@ -16,56 +16,6 @@ const project = {
         },
     ],
     fields: [
-        {
-            name: 'category',
-            title: 'Category',
-            type: 'string',
-            options: {
-                list: [
-                    {title: 'Athletic Apparel', value: 'Athletic Apparel'},
-                    {title: 'Automotive', value: 'Automotive'},
-                    {title: 'Cat Foot', value: 'Cat Food'},
-                    {title: 'Sleep', value: 'Sleep'}
-                ]
-            }
-        },
-        {
-            name: 'featured',
-            title: 'Featured',
-            description: 'Enable to feature this client on the home page.',
-            type: 'boolean'
-        },
-        {
-            name: 'award',
-            title: 'Award Winning',
-            description: 'Enable if this project won something fancy, or a pencil.',
-            type: 'boolean'
-        },
-        // Client Cards
-        {
-            name: 'clientCard',
-            title: 'Client Card',
-            type: 'image'
-        },
-        {
-            name: 'clientCardColour',
-            title: 'Client Card Colour',
-            type: 'image'
-        },
-        {
-            name: 'thumbnail',
-            title: 'Thumbnail',
-            type: 'file',
-            fields: [
-              {
-                name: 'type',
-                title: 'Is this a Video?',
-                description: 'Enable for super-special video mode.',
-                type: 'boolean',
-              }
-            ]
-        },
-                
         // Client
         {
             name: 'name',
@@ -80,11 +30,72 @@ const project = {
             type: 'slug',
             options: {source: 'name'}
         },
+        {
+            name: 'category',
+            title: 'Category',
+            type: 'string',
+            options: {
+                list: [
+                    {title: 'Athletic Apparel', value: 'Athletic Apparel'},
+                    {title: 'Automotive', value: 'Automotive'},
+                    {title: 'Cat Food', value: 'Cat Food'},
+                    {title: 'Sleep', value: 'Sleep'},
+                    {title: 'Drink', value: 'Drink'},
+                    {title: 'Pet', value: 'Pet'},
+                ]
+            }
+        },
+        {
+            name: 'featured',
+            title: 'Featured',
+            description: 'Enable to feature this client on the home page.',
+            type: 'boolean'
+        },
+        {
+            name: 'award',
+            title: 'Award Winning',
+            description: 'Enable if this project won something fancy, or a pencil.',
+            type: 'boolean',
+        },
+        {
+            name: 'pencil',
+            title: 'Pencil ✏️',
+            description: 'Did we win a ✏️?',
+            type: 'boolean'
+        },
+        // Client Cards
+        {
+            name: 'clientCard',
+            title: 'Client Card (Basic)',
+            type: 'image'
+        },
+        {
+            name: 'clientCardColour',
+            title: 'Client Card (Colour)',
+            type: 'image'
+        },
+        {
+            name: 'thumbnail',
+            title: 'Home Page Thumbnail',
+            description: 'Images or Videos welcome.',
+            type: 'file',
+            fields: [
+              {
+                name: 'type',
+                title: 'Is this a Video?',
+                description: 'Enable for super-special video mode on Home Page.',
+                type: 'boolean',
+              }
+            ]
+        },
+                
+
         // Header
         {
             name: 'heroText',
             title: 'Hero Text',
             type: 'object',
+            group: 'page',
             fields: [
                 {
                     name: 'heroHeader',
@@ -115,7 +126,6 @@ const project = {
             name: 'howWeHelped',
             title: 'How We Helped',
             type: 'object',
-            options: {collapsible: true, collapsed: true},
             fields: [
                 {
                     name: 'howWeHelpedText',
@@ -125,18 +135,35 @@ const project = {
                     of: [{type: 'block'}, {type: 'figure'}]
                 },
                 {
-                    name: 'services',
-                    title: 'Services',
+                    name: 'servicesProvided',
+                    title: 'Services Provided',
                     description: "List of services provided to the client",
                     type: 'array',
-                    of: [{type: 'string'}]
+                    of: [{
+                        type: 'string',
+                        options: {
+                            list: [
+                                {title: '3D', value: '3D'},
+                                {title: 'Animation', value: 'Animation'},
+                                {title: 'Art Direction', value: 'Art Direction'},
+                                {title: 'Branding', value: 'Branding'},
+                                {title: 'Illustration', value: 'Illustration'},
+                                {title: 'Naming', value: 'Naming'},
+                                {title: 'Packaging', value: 'Packaging'},
+                                {title: 'Strategy', value: 'Strategy'},
+                                {title: 'UI/UX', value: 'UI/UX'},
+                                {title: 'Website Build', value: 'Website Build'},
+                            ]
+                        }
+
+                    }]
                 },
             ]
         },
 
         {
             name: 'mediaFiles',
-            title: 'Media Files',
+            title: 'Media Files (Deprecated)',
             description: "Visual content for the project",
             type: 'array',
             of: [
@@ -153,67 +180,15 @@ const project = {
                       }
                     ]
                 },
-            ]
+            ],
+            preview: {
+                select: {
+                    title: 'item',
+                    media: 'file'
+                }
+            }
         },
-        // Media
-        // {
-        //     name: 'media',
-        //     title: 'Media',
-        //     type: 'object',
-        //     options: {collapsible: true, collapsed: false},
-        //     group: 'media',
-        //     fields: [
-        //         // Images
-        //         {
-        //             name: 'heroImages',
-        //             title: 'Hero Images',
-        //             type: 'object',
-        //             options: {collapsible: true, collapsed: false, columns: 3},
-        //             fields: 
-        //             [
-        //                 {
-        //                     name: 'heroLg',
-        //                     title: 'Hero Large',
-        //                     type: 'image',
-        //                     options: {hotspot: true},
-                            
-        //                 },
-        //                 {
-        //                     name: 'heroMd',
-        //                     title: 'Hero Medium',
-        //                     type: 'image',
-        //                     options: {hotspot: true},
-        //                 },
-        //                 {
-        //                     name: 'heroSm',
-        //                     title: 'Hero Small',
-        //                     type: 'image',
-        //                     options: {hotspot: true},
-        //                 }
-        //             ]
-        //         },
-        //         // Videos
-        //         {
-        //             type: 'object',
-        //             name: 'heroVideos',
-        //             options: {columns: 2},
-        //             fields: [
-        //                 {
-        //                     name: 'videoDesktop',
-        //                     title: 'Desktop',
-        //                     type: 'file',
-        //                 },
-        //                 {
-        //                     name: 'videoMobile',
-        //                     title: 'Mobile',
-        //                     type: 'file',
         
-        //                 }
-                        
-        //             ],
-        //         },
-        //     ],
-        // },
         // Quote
         {
             name: 'quote',
@@ -262,7 +237,19 @@ const project = {
             type: 'seo',
             group: 'seo'
         },
+        {
+            name: 'pageBuilder',
+            title: 'Page Builder',
+            type: 'pageBuilder',
+            group: 'page'
+        }
     ],
+    preview: {
+        select: {
+            title: 'name',
+            media: 'clientCardColour',
+        }
+    }
 }
 
 export default project;

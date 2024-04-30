@@ -1,8 +1,11 @@
+import { defineArrayMember, defineField, defineType } from "sanity";
+
 const page = {
     name: "page",
     title: "Pages",
     type: 'document',
     groups: [
+      {name: 'page', title: 'Page'},
       {name: 'seo', title: 'SEO'}
     ],
     fields: [
@@ -28,7 +31,7 @@ const page = {
         title: 'SEO',
         type: 'seo',
         group: 'seo'
-    },
+      },
     ],
   };
   

@@ -108,7 +108,7 @@ export default async function Home() {
 
         <h2 className="mb-7 text text-gray-700 text-4.5xl text-center mt-14">Our Work</h2>
 
-        <div className="flex flex-col flex-wrap md:flex-row gap-8 max-w-4xl mx-auto">
+        <div className="flex flex-col flex-wrap md:flex-row gap-15 max-w-4xl mx-auto">
           {projects.filter(project => project.featured).map((project) => (
             
             <Link href={`/projects/${project.slug}`} key={project._id} className="flex mx-auto my-0 max-w-96">
@@ -132,11 +132,22 @@ export default async function Home() {
                     />
                   }
                   <div className="flex flex-wrap gap-1 mt-4">
-                    <span className="font-gt-pressura border border-white-rock px-3 py-1 rounded-full">{project.category.toUpperCase()}</span>
-                    {project.services.map((service, index) => (
-                      <span key={index} className="font-gt-pressura text-base bg-white-rock px-3 py-1.5 rounded-full">{service.toUpperCase()}</span>
-                    ))}
-                    {project.award ? <span className="font-gt-pressura border border-white-rock px-3 py-1 rounded-full">AWARD WINNING</span> : ""}
+                    <span className="flex items-center font-gt-pressura border border-white-rock px-3 h-8 rounded-full">{project.category.toUpperCase()}</span>
+                    {project.servicesProvided?.map((service, index) => (
+                      <span key={index} className="flex items-center font-gt-pressura text-base bg-white-rock px-3 h-8 rounded-full">{service.toUpperCase()}</span>
+                    )) || ""}
+                    {project.award ? 
+                      <span className="flex items-center gap-1.5 font-gt-pressura border border-white-rock px-3 h-8 rounded-full">
+                        AWARD WINNING
+                        {project.pencil ? 
+                      <Image src="/the-pencil.png" alt="Pecil award icon" width={10} height={22}/>
+                      :
+                      "" 
+                    }
+                      </span> 
+                      : ""
+                    }
+
                   </div>
                 </div>
             </Link>
@@ -150,6 +161,7 @@ export default async function Home() {
         <h2 className="mb-7 text text-gray-700 text-4.5xl text-center mt-14">Our Services</h2>
         <div className="flex gap-2.9 overflow-scroll">
           {services.map((service, index) => (
+            service.media ?
             <div key={index} className=" object-cover flex flex-col gap-4 items-center">
               <div className="relative w-72 h-72">
                 {service.video ? 
@@ -163,6 +175,8 @@ export default async function Home() {
               <span key={index} className="font-gt-pressura text-xl">{service.name}</span>
 
             </div>
+            :
+            ""
           ))}
         </div>
       </section>

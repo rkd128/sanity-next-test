@@ -6,10 +6,11 @@ export type Project = {
     name: string;
     heroHeader: string;
     award: boolean;
+    pencil: boolean;
     howWeHelpedText: PortableTextBlock[];
     thumbnail: string;
     thumbnailVideo: boolean;
-    services: string[];
+    servicesProvided: string[];
     featured: boolean;
     category: string;
     clientCard: string;
