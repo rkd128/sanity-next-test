@@ -49,7 +49,7 @@ export default async function Project({ params }: Props) {
       <div>
         <h3 className="font-bold text-xl my-4">Services</h3>
         <ul className="font-extralight list-disc ml-5">
-          {project.services.map((service, index) => (
+          {project.servicesProvided.map((service, index) => (
             <li key={index} className="text-base">{service}</li>
           ))}
         </ul>
