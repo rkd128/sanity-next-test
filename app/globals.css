@@ -39,8 +39,8 @@ p {
 }
 
 .ux-header {
-  font-size: clamp(2.3rem, 11vw, 10rem);
-  line-height: clamp(3rem, 12vw, 10rem);
+  font-size: clamp(2.3rem, 11vw, 5.8rem);
+  line-height: clamp(3rem, 12vw, 6.9rem);
 }
 
 .bar {

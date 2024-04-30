@@ -18,7 +18,7 @@ export default async function Home() {
                 <Link href="/" className="max-lg:block hidden self-start">
                   <Image src="/logo.svg" alt="Underexposed Logo" width={178} height={117}/>
                 </Link>
-                <h1 className="ux-header xl:max-w-4xl text-black mb-14">
+                <h1 className="ux-header max-w-3xl text-black mb-14">
                   We build brands that connect your ideas to the world
                 </h1>
               </div>
