@@ -14,11 +14,11 @@ export default async function Home() {
           {/* Hero Content */}
           <div className="top-0 h-full w-full lg:grid lg:grid-rows-2 pt-10">
             {/* Hero Text Content */}
-              <div className="sticky top-10 flex flex-col gap-14 items-center justify-center px-4">
+              <div className="sticky top-10 flex flex-col gap-14 items-center justify-center px-4 md:px-6">
                 <Link href="/" className="max-lg:block hidden self-start">
                   <Image src="/logo.svg" alt="Underexposed Logo" width={178} height={117}/>
                 </Link>
-                <h1 className="max-w-4xl text-4.5xl leading-11 md:text-7xl xl:text-8xl text-black mb-14">
+                <h1 className="ux-header xl:max-w-4xl text-black mb-14">
                   We build brands that connect your ideas to the world
                 </h1>
               </div>
@@ -157,9 +157,9 @@ export default async function Home() {
 
       </section>
 
-      <section className="w-screen pb-32">
+      <section className="w-screen pb-32 ">
         <h2 className="mb-7 text text-gray-700 text-4.5xl text-center mt-14">Our Services</h2>
-        <div className="flex gap-2.9 overflow-scroll">
+        <div className="flex gap-2.9 overflow-scroll px-3">
           {services.map((service, index) => (
             service.media ?
             <div key={index} className=" object-cover flex flex-col gap-4 items-center">

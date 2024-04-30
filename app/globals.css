@@ -38,6 +38,11 @@ p {
   margin-bottom: 25px!important;
 }
 
+.ux-header {
+  font-size: clamp(2.3rem, 11vw, 10rem);
+  line-height: clamp(3rem, 12vw, 10rem);
+}
+
 .bar {
     display: block;
     width: 32px;

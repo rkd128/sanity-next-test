@@ -61,7 +61,7 @@ module.exports = {
       },
       height: {
         'showcase-thumb': '12.375rem', // 198px
-        'mobile-video': '36.43rem', // 583px
+        'mobile-video': '73vh', // 583px
       },
       gap: {
         '1.5': '5px',
