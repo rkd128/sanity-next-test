@@ -1,10 +1,10 @@
-import project from './project-schema';
-import page from './page-schema';
+import project from './schema-project';
+import page from './schema-page';
 import seo from './seo';
 import figure from './figure';
-import service from './service-schema';
+import service from './schema-service';
 import heroType from './heroType';
-import imageGallery from './imageGallery';
+import imageGalleryType from './imageGalleryType';
 import textWithIllustrationType from './textWithIllustrationType';
 import videoType from './videoType';
 import quoteType from './quoteType';
@@ -19,7 +19,7 @@ const schemas = [
     service,
     heroType,
     textWithIllustrationType,
-    imageGallery,
+    imageGalleryType,
     videoType,
     quoteType,
 ]

@@ -12,9 +12,9 @@ export default async function Home() {
         {/* HERO */}
         <section className="hero h-auto lg:pt-36 relative bg-white-rock">
           {/* Hero Content */}
-          <div className="top-0 h-full w-full lg:grid lg:grid-rows-2 pt-10">
+          <div className="max-lg:h-full w-full lg:flex lg:flex-col pt-10 pb-5">
             {/* Hero Text Content */}
-              <div className="sticky top-10 flex flex-col gap-14 items-center justify-center px-4 md:px-6">
+              <div className="max-lg:sticky top-10 flex flex-col gap-14 items-center justify-center px-4 md:px-6">
                 <Link href="/" className="max-lg:block hidden self-start">
                   <Image src="/logo.svg" alt="Underexposed Logo" width={178} height={117}/>
                 </Link>
@@ -23,12 +23,12 @@ export default async function Home() {
                 </h1>
               </div>
             {/* Video */}
-            <div className="hero-video hidden max-lg:block h-mobile-video">
-              <video className="h-full w-screen object-cover" src="https://underexposed.imgix.net/2023/08/Underexposed_Showreel-2023_Mobile-1.mp4" playsInline loop muted autoPlay></video>
-            </div>
+              <div className="hero-video hidden max-lg:block h-mobile-video">
+                <video className="h-full w-screen object-cover" src="https://underexposed.imgix.net/2023/08/Underexposed_Showreel-2023_Mobile-1.mp4" playsInline loop muted autoPlay></video>
+              </div>
             {/* Client Logos -- Desktop Only */}
-              <div className="max-lg:hidden w-full self-end overflow-hidden">
-                <div className="flex gap-2 justify-center">
+              <div className="logos flex gap-2 max-lg:hidden w-full overflow-hidden">
+                <div className="logos-slide flex whitespace-nowrap gap-2 h-28">
                   {projects.map((project) => (
                     <div className="relative" key={project._id}>
                         <Image className="client-icon min-w-28"
@@ -40,7 +40,49 @@ export default async function Home() {
                           />
                     </div>
                   ))}
+                  {/* <Image src="/images/denzels.png" width={112} height={112} alt="Denzels icon" className="logo-client"/>
+                  <Image src="/images/envoy.png" width={112} height={112} alt="Envoy icon" className="logo-client"/>
+                  <Image src="/images/grind.png" width={112} height={112} alt="Grind icon" className="logo-client"/>
+                  <Image src="/images/indi.png" width={112} height={112} alt="Indi icon" className="logo-client"/>
+                  <Image src="/images/iraye.png" width={112} height={112} alt="Iraye icon" className="logo-client"/>
+                  <Image src="/images/lagatta.png" width={112} height={112} alt="Lagatta icon" className="logo-client"/>
+                  <Image src="/images/neat.png" width={112} height={112} alt="Neat icon" className="logo-client"/>
+                  <Image src="/images/ordo.png" width={112} height={112} alt="Ordo icon" className="logo-client"/>
+                  <Image src="/images/reckitt.png" width={112} height={112} alt="Reckitt icon" className="logo-client"/>
+                  <Image src="/images/simba.png" width={112} height={112} alt="Simba icon" className="logo-client"/>
+                  <Image src="/images/totm.png" width={112} height={112} alt="Top of the Mornin' icon" className="logo-client"/>
+                  <Image src="/images/untamed.png" width={112} height={112} alt="Untamed icon" className="logo-client"/>
+                  <Image src="/images/waldo.png" width={112} height={112} alt="Waldo icon" className="logo-client"/>
+                  <Image src="/images/yfood.png" width={112} height={112} alt="YFood icon" className="logo-client"/> */}
                 </div>
+                <div className="logos-slide flex whitespace-nowrap gap-2 h-28">
+                  {projects.map((project) => (
+                    <div className="relative" key={project._id}>
+                        <Image className="client-icon min-w-28"
+                          src={project.clientCardColour} 
+                          key={project._id} 
+                          alt={project.name} 
+                          width={112} 
+                          height={112} 
+                          />
+                    </div>
+                  ))}
+                  {/* <Image src="/images/denzels.png" width={112} height={112} alt="Denzels icon" className="logo-client"/>
+                  <Image src="/images/envoy.png" width={112} height={112} alt="Envoy icon" className="logo-client"/>
+                  <Image src="/images/grind.png" width={112} height={112} alt="Grind icon" className="logo-client"/>
+                  <Image src="/images/indi.png" width={112} height={112} alt="Indi icon" className="logo-client"/>
+                  <Image src="/images/iraye.png" width={112} height={112} alt="Iraye icon" className="logo-client"/>
+                  <Image src="/images/lagatta.png" width={112} height={112} alt="Lagatta icon" className="logo-client"/>
+                  <Image src="/images/neat.png" width={112} height={112} alt="Neat icon" className="logo-client"/>
+                  <Image src="/images/ordo.png" width={112} height={112} alt="Ordo icon" className="logo-client"/>
+                  <Image src="/images/reckitt.png" width={112} height={112} alt="Reckitt icon" className="logo-client"/>
+                  <Image src="/images/simba.png" width={112} height={112} alt="Simba icon" className="logo-client"/>
+                  <Image src="/images/totm.png" width={112} height={112} alt="Top of the Mornin' icon" className="logo-client"/>
+                  <Image src="/images/untamed.png" width={112} height={112} alt="Untamed icon" className="logo-client"/>
+                  <Image src="/images/waldo.png" width={112} height={112} alt="Waldo icon" className="logo-client"/>
+                  <Image src="/images/yfood.png" width={112} height={112} alt="YFood icon" className="logo-client"/> */}
+                </div>
+
 
               </div>
           </div>

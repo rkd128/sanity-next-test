@@ -70,6 +70,12 @@ module.exports = {
       },
       padding: {
         '20.5': '87px' // 87px
+      },
+      maxHeight: {
+        '620': '620px'
+      },
+      maxWidth: {
+        '1100': '1100px'
       }
     },
   },

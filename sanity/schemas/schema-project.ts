@@ -63,6 +63,30 @@ const project = {
             description: 'Did we win a ✏️?',
             type: 'boolean'
         },
+        {
+            name: 'showcase',
+            title: 'Showcase',
+            description: 'Enable to show client on main Showcase page.',
+            type: 'object',
+            fields: [
+                {
+                    name: 'showcaseEnable',
+                    title: 'Showcase',
+                    type: 'boolean',
+                },
+                {
+                    name: 'showcaseMedia',
+                    title: 'Showcase Backdrop',
+                    type: 'file',
+                },
+                {
+                    name: 'showcaseVideoMode',
+                    title: 'Showcase Video Mode',
+                    type: 'boolean',
+                },
+
+            ]
+        },
         // Client Cards
         {
             name: 'clientCard',

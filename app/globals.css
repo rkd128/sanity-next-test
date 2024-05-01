@@ -100,13 +100,13 @@ p {
       transform: translateX(0%);
     }
     100% {
-      transform: translateX(-200vw);
+      transform: translateX(calc(-100% - 1rem));
     }
   }
   
   @keyframes scrollLeft {
     0% {
-      transform: translateX(-100vw);
+      transform: translateX(calc(-100% - 1rem));
     }
     100% {
       transform: translateX(0%);
@@ -115,8 +115,18 @@ p {
 
   .scrolling-right, .scrolling-left {
     width: 100vw;
+    white-space: nowrap;
+  }
+
+  .logos-slide {
+    animation: scrollRight 35s linear infinite;
   }
   
+.logo-client {
+  display: inline-block;
+  width: 112px;
+}
+
   .scrolling-right {
     display: flex;
     animation: scrollRight 20s linear infinite;
